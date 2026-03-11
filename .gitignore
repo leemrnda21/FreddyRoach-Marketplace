@@ -2,6 +2,36 @@ db.sqlite3
 *.pyc
 */*.pyc
 */*/*.pyc
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Django
+*.sqlite3
+local_settings.py
+media/uploads/
+
+# Logs
+*.log
+
+# OS files
 .DS_Store
 */.DS_Store
 */*/.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDEs/editors
+.idea/
+.vscode/
+*.swp
+*~

@@ -5,50 +5,73 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            body: ['"Space Grotesk"', 'ui-sans-serif', 'system-ui'],
+                            display: ['"Space Grotesk"', 'ui-sans-serif', 'system-ui']
+                        },
+                        boxShadow: {
+                            soft: '0 18px 45px -20px rgba(15, 23, 42, 0.45)'
+                        }
+                    }
+                }
+            }
+        </script>
         <script src="https://cdn.tailwindcss.com"></script>
 
         <title>{% block title %}{% endblock %} | FreddyRoach Marketplace ©</title>
     </head>
 
-    <body style="background-color:whitesmoke;">
-        <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200">
-            <a href="/" class="text-xl font-semibold">FreddyRoach Marketplace ©</a>
+    <body class="min-h-screen bg-gradient-to-b from-white via-rose-50 to-slate-100 text-slate-900 font-body">
+        <nav class="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
+            <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+                <a href="/" class="text-2xl font-semibold tracking-tight text-slate-900">
+                    FreddyRoach Marketplace ©
+                </a>
 
-            <div class="space-x-6">
-                <a href="{% url 'item:new' %}" class="px-6 py-3 text-lg font-semibold bg-red-500 text-white rounded-xl hover:bg-red-700">Sell</a>
-                <a href="{% url 'item:items' %}" class="px-6 py-3 text-lg font-semibold bg-red-500 text-white rounded-xl hover:bg-red-700">All Categories</a>
+                <div class="flex flex-wrap items-center gap-3 text-sm sm:text-base">
+                    <a href="{% url 'item:new' %}" class="rounded-full bg-red-600 px-5 py-2.5 font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-red-700">Sell</a>
+                    <a href="{% url 'item:items' %}" class="rounded-full border border-red-200 bg-white px-5 py-2.5 font-semibold text-red-700 transition hover:border-red-400 hover:text-red-800">All Categories</a>
 
-                {% if request.user.is_authenticated %}
-                    <a href="{% url 'conversation:inbox' %}" class="px-6 py-3 text-lg font-semibold bg-red-500 text-white rounded-xl hover:bg-red-700">Inbox</a>
-                    <a href="{% url 'dashboard:index' %}" class="px-6 py-3 text-lg font-semibold bg-red-500 text-white rounded-xl hover:bg-red-700">View Your Items</a>
-                    <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Log Out</a>
-                {% else %}
-                    <a href="{% url 'core:signup' %}" class="px-6 py-3 text-lg font-semibold bg-red-500 text-white rounded-xl hover:bg-red-700">Register</a>
-                    <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Login</a>
-                {% endif %}
+                    {% if request.user.is_authenticated %}
+                        <a href="{% url 'conversation:inbox' %}" class="rounded-full bg-red-600 px-5 py-2.5 font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-red-700">Inbox</a>
+                        <a href="{% url 'dashboard:index' %}" class="rounded-full border border-slate-300 bg-white px-5 py-2.5 font-semibold text-slate-700 transition hover:border-slate-500 hover:text-slate-900">View Your Items</a>
+                        <a href="{% url 'core:login' %}" class="rounded-full bg-slate-900 px-5 py-2.5 font-semibold text-white transition hover:bg-black">Log Out</a>
+                    {% else %}
+                        <a href="{% url 'core:signup' %}" class="rounded-full bg-red-600 px-5 py-2.5 font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-red-700">Register</a>
+                        <a href="{% url 'core:login' %}" class="rounded-full bg-slate-900 px-5 py-2.5 font-semibold text-white transition hover:bg-black">Login</a>
+                    {% endif %}
+                </div>
             </div>
         </nav>
 
-        <div class="px-6 py-6">
-            {% block content %}
-            {% endblock %}
-        </div>
-
-          <footer class="py-6 px-6 flex justify-between bg-red-800">
-            <div class="w-1/1 pr-10">
-                <h3 class="px-6 py-3 text-lg font-semibold text-white rounded-xl">AYSUSDITO.PH ©</h3>
-
-                <p class="px-6 py-3 text-lg font-semibold text-white rounded-l">Here at AysusDito.ph norem tayo marami produkto para sa bawat Pilipino! Mapa Bisaya, Kapampangan, Tagalog, o Ilokano!</p>
+        <main class="px-4 py-10 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-6xl">
+                {% block content %}
+                {% endblock %}
             </div>
+        </main>
 
-            <div class="w-1/1">
-                <h3 class="px-6 py-3 text-lg font-semibold text-white rounded-xl">CONTACT</h3>
+        <footer class="mt-16 border-t border-red-900/40 bg-red-900 text-white">
+            <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2 sm:px-6 lg:px-8">
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold tracking-wide">AYSUSDITO.PH ©</h3>
+                    <p class="text-sm leading-relaxed text-red-100">
+                        Here at AysusDito.ph norem tayo marami produkto para sa bawat Pilipino! Mapa Bisaya, Kapampangan, Tagalog, o Ilokano!
+                    </p>
+                </div>
 
-                <ul class="space-y-5">
-
-                    <li><a href="{% url 'core:contact' %}" class="px-6 py-3 text-lg font-semibold text-white rounded-xl hover:bg-red-700">Ask Admin For Help?</a></li>
-
-                </ul>
+                <div class="space-y-4 sm:text-right">
+                    <h3 class="text-lg font-semibold tracking-wide">CONTACT</h3>
+                    <a href="{% url 'core:contact' %}" class="inline-flex items-center justify-center rounded-full border border-red-200/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white hover:bg-red-800">Ask Admin For Help?</a>
+                </div>
             </div>
         </footer>
     </body>

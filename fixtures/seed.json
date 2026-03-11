@@ -1,0 +1,316 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$QRETKKqVh5XsE1ofoFpmY9$qISR7tDyZyXUvaLdLesbtRdVGQoZtoM8EwR817bjWYY=",
+    "last_login": "2024-10-16T13:19:22.955Z",
+    "is_superuser": true,
+    "username": "leepogi",
+    "first_name": "",
+    "last_name": "",
+    "email": "leepogi@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-11-26T16:10:23.441Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$jhQ0KUUUHu83l2B6zS3rCg$IZeZPxTULHPTIht02TUTYa6jCdUagD0MXsLaJw+iRFc=",
+    "last_login": "2024-10-16T13:36:40.720Z",
+    "is_superuser": false,
+    "username": "hevabi",
+    "first_name": "",
+    "last_name": "",
+    "email": "hevabi@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-26T16:15:20.602Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$V1BLMsw2naKeZfZexjjlSD$FfM7tgqMjJ1iU554KTLfmXf6GwoLi9npLxkHPC2H/Vs=",
+    "last_login": "2024-10-16T13:18:25.202Z",
+    "is_superuser": false,
+    "username": "rickowens",
+    "first_name": "",
+    "last_name": "",
+    "email": "rickowens@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-26T16:26:22.956Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "conversation.conversation",
+  "pk": 1,
+  "fields": {
+    "item": 11,
+    "created_at": "2024-10-16T13:36:24.813Z",
+    "modified_at": "2024-10-16T13:36:24.828Z",
+    "members": [
+      [
+        "leepogi"
+      ],
+      [
+        "hevabi"
+      ]
+    ]
+  }
+},
+{
+  "model": "conversation.conversationmessage",
+  "pk": 1,
+  "fields": {
+    "conversation": 1,
+    "content": "adasdas",
+    "created_at": "2024-10-16T13:36:24.832Z",
+    "created_by": [
+      "leepogi"
+    ]
+  }
+},
+{
+  "model": "item.category",
+  "pk": 5,
+  "fields": {
+    "name": "Fashion"
+  }
+},
+{
+  "model": "item.category",
+  "pk": 6,
+  "fields": {
+    "name": "Furniture"
+  }
+},
+{
+  "model": "item.category",
+  "pk": 7,
+  "fields": {
+    "name": "Electronics"
+  }
+},
+{
+  "model": "item.category",
+  "pk": 8,
+  "fields": {
+    "name": "Others"
+  }
+},
+{
+  "model": "item.category",
+  "pk": 9,
+  "fields": {
+    "name": "Cars"
+  }
+},
+{
+  "model": "item.category",
+  "pk": 10,
+  "fields": {
+    "name": "Properties"
+  }
+},
+{
+  "model": "item.item",
+  "pk": 11,
+  "fields": {
+    "category": 7,
+    "name": "Iphone 15 256 GB Black",
+    "description": "maangas 'to boss!\r\nfully paid!\r\nalmost brand new!",
+    "price": 49990.0,
+    "image": "item_images/iphone-15-finish-select-202309-6-1inch-black.jfif",
+    "is_sold": false,
+    "created_by": [
+      "hevabi"
+    ],
+    "created_at": "2023-11-26T16:17:16.746Z"
+  }
+},
+{
+  "model": "item.item",
+  "pk": 12,
+  "fields": {
+    "category": 5,
+    "name": "Issey Miyake Pleated Pants",
+    "description": "W: 32\r\nL: 41\r\n\r\nfresh swabe ang datingan!\r\nslightly used.",
+    "price": 2500.0,
+    "image": "item_images/20-01-2021_SI_HP16JF150-15_1_1_idn6y8a.jpg",
+    "is_sold": false,
+    "created_by": [
+      "hevabi"
+    ],
+    "created_at": "2023-11-26T16:19:27.962Z"
+  }
+},
+{
+  "model": "item.item",
+  "pk": 13,
+  "fields": {
+    "category": 6,
+    "name": "Wooden Chair (Black)",
+    "description": "Black Wooden Chair\r\nBrand New\r\nPwedeng pwede upuan",
+    "price": 800.0,
+    "image": "item_images/arno-side-chair-black.jpg",
+    "is_sold": false,
+    "created_by": [
+      "hevabi"
+    ],
+    "created_at": "2023-11-26T16:21:41.210Z"
+  }
+},
+{
+  "model": "item.item",
+  "pk": 14,
+  "fields": {
+    "category": 8,
+    "name": "Black Moor Goldfish",
+    "description": "Male\r\n2 Weeks Old\r\nHealthy\r\nRare Color",
+    "price": 500.0,
+    "image": "item_images/Black-Moor-Goldfish-Carassius-auratus.jpg",
+    "is_sold": false,
+    "created_by": [
+      "hevabi"
+    ],
+    "created_at": "2023-11-26T16:23:09.873Z"
+  }
+},
+{
+  "model": "item.item",
+  "pk": 15,
+  "fields": {
+    "category": 7,
+    "name": "Iphone 15 1 TB Blue Titanium",
+    "description": "1 TB\r\nBrand New",
+    "price": 79990.0,
+    "image": "item_images/iphone-15-pro-finish-select-202309-6-7inch-bluetitanium.jfif",
+    "is_sold": false,
+    "created_by": [
+      "rickowens"
+    ],
+    "created_at": "2023-11-26T16:27:55.364Z"
+  }
+},
+{
+  "model": "item.item",
+  "pk": 16,
+  "fields": {
+    "category": 8,
+    "name": "White Siamese Fighting Fish (Couple)",
+    "description": "Male\r\nFemale\r\nReady to breed\r\n3 weeks old",
+    "price": 2500.0,
+    "image": "item_images/iStock-1304012067-1024x683.jpg",
+    "is_sold": false,
+    "created_by": [
+      "rickowens"
+    ],
+    "created_at": "2023-11-26T16:29:02.128Z"
+  }
+},
+{
+  "model": "item.item",
+  "pk": 17,
+  "fields": {
+    "category": 7,
+    "name": "Iphone 15 2 TB Natural Titanium",
+    "description": "BRAND NEW",
+    "price": 99990.0,
+    "image": "item_images/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium.jfif",
+    "is_sold": false,
+    "created_by": [
+      "rickowens"
+    ],
+    "created_at": "2023-11-26T16:30:38.862Z"
+  }
+},
+{
+  "model": "item.item",
+  "pk": 18,
+  "fields": {
+    "category": 5,
+    "name": "Chromehearts Cemetery Ring",
+    "description": "Good as new, chromehearts cemetery ring\r\nstraight from Japan!",
+    "price": 30000.0,
+    "image": "item_images/1-1-4_ddfe0a58-36f6-417d-aa30-802f343a6e74_2IinLhc.jpg",
+    "is_sold": false,
+    "created_by": [
+      "rickowens"
+    ],
+    "created_at": "2023-11-26T16:32:20.930Z"
+  }
+},
+{
+  "model": "item.item",
+  "pk": 19,
+  "fields": {
+    "category": 7,
+    "name": "Iphone 14 256 GB Yellow",
+    "description": "2nd hand\r\nUsed but not abused.",
+    "price": 25990.0,
+    "image": "item_images/iphone-14-model-unselect-gallery-2-202303.jfif",
+    "is_sold": false,
+    "created_by": [
+      "rickowens"
+    ],
+    "created_at": "2023-11-26T16:35:27.501Z"
+  }
+},
+{
+  "model": "item.item",
+  "pk": 20,
+  "fields": {
+    "category": 10,
+    "name": "Modern House 3 Hectares in Tagaytay",
+    "description": "Goodshi!",
+    "price": 30000000.0,
+    "image": "item_images/retreat-the-modern-house-in-nature-01.webp",
+    "is_sold": false,
+    "created_by": [
+      "rickowens"
+    ],
+    "created_at": "2023-11-26T17:57:38.160Z"
+  }
+},
+{
+  "model": "item.item",
+  "pk": 22,
+  "fields": {
+    "category": 9,
+    "name": "Honda Civic RS Turbo Auto White (2019)",
+    "description": "Automatic Transmission \r\n W/ Paddle Shifters\r\n 37k+ Mileage Only! ( Please look through the photos )\r\n Casa Maintained \r\n w/ Casa Records at Honda\r\n 18s Upgraded Mags\r\n Drift Exhaust \r\n Leather Seats\r\n Push Start button\r\n Keyless Entry \r\n 2 Remote Keys\r\n Complete Documents\r\n No History of Accident and Not Flooded",
+    "price": 1099990.0,
+    "image": "item_images/honda_civic_rs_turbo_auto_1698562947_ceda7de1_progressive_Z986asl.jpg",
+    "is_sold": false,
+    "created_by": [
+      "rickowens"
+    ],
+    "created_at": "2023-11-26T20:01:51.813Z"
+  }
+},
+{
+  "model": "item.item",
+  "pk": 23,
+  "fields": {
+    "category": 5,
+    "name": "Dr. Martens Rick Owens x 1460 Quad Sole Pentagram Jumbo Lace",
+    "description": "Brandnew!\r\n\r\nRick Owens’ meteoric rise in the 90s coincided with a grunge renaissance for Dr. Martens: a decade defined by deconstructed, binary-defying wardrobes and attitudes. That spirit of energetic non-conformity drives our latest collaboration — and is guaranteed to deliver unorthodox results.",
+    "price": 80000.0,
+    "image": "item_images/sg-11134201-7qvd0-lhvtffpgh76bd7.jfif",
+    "is_sold": false,
+    "created_by": [
+      "rickowens"
+    ],
+    "created_at": "2023-11-26T20:09:11.297Z"
+  }
+}
+]
