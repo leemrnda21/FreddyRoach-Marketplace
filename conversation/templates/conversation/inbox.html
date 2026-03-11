@@ -3,25 +3,31 @@
 {% block title %}Inbox{% endblock %}
 
 {% block content %}
-<h1 class="mb-6 text-3xl">Inbox</h1>
+<div class="flex flex-wrap items-center justify-between gap-4">
+    <div>
+        <p class="text-sm font-semibold uppercase tracking-wider text-slate-500">Messages</p>
+        <h1 class="text-3xl font-semibold text-slate-900">Inbox</h1>
+    </div>
+    <a href="{% url 'item:items' %}" class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">Find more items</a>
+</div>
 
-<div class="space-y-6">
+<div class="mt-6 space-y-4">
     {% for conversation in conversations %}
-        <a href="{% url 'conversation:detail' conversation.id %}">
-            <div class="p-6 flex bg-gray-100 rounded-xl">
-                <div class="pr-6">
-                    <img src="{{ conversation.item.image.url }}" class="w-20 rounded-xl">
-                </div>
-
-                <div>
-                    {% for member in conversation.members.all %}
-                        {% if member != request.user %}
-                            <p class="mb-4"><strong>{{ member.username }}</strong> | {{ conversation.modified_at }}</p>
-                            <p>{{ conversation.item.name }}</p>
-                        {% endif %}
-                    {% endfor %}
-                </div>
+        <a href="{% url 'conversation:detail' conversation.id %}" class="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-soft transition hover:-translate-y-0.5 hover:border-slate-300 sm:flex-row sm:items-center">
+            <div class="h-20 w-24 overflow-hidden rounded-xl bg-slate-100">
+                <img src="{{ conversation.item.image.url }}" alt="{{ conversation.item.name }}" class="h-full w-full object-cover">
             </div>
+
+            <div class="flex-1">
+                {% for member in conversation.members.all %}
+                    {% if member != request.user %}
+                        <p class="text-sm font-semibold text-slate-900">{{ member.username }}</p>
+                        <p class="mt-1 text-sm text-slate-500">{{ conversation.item.name }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="text-xs font-medium text-slate-500">{{ conversation.modified_at }}</div>
         </a>
     {% endfor %}
 </div>

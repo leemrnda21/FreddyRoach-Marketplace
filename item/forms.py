@@ -2,7 +2,7 @@ from django import forms
 
 from .models import Item
 
-INPUT_CLASSES = 'w-full py-4 px-6 rounded-xl border'
+INPUT_CLASSES = 'w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200'
 
 class NewItemForm(forms.ModelForm):
     class Meta:
@@ -16,7 +16,7 @@ class NewItemForm(forms.ModelForm):
                 'class': INPUT_CLASSES
             }),
             'description': forms.Textarea(attrs={
-                'class': INPUT_CLASSES
+                'class': f'{INPUT_CLASSES} min-h-[160px]'
             }),
             'price': forms.TextInput(attrs={
                 'class': INPUT_CLASSES
@@ -35,7 +35,7 @@ class EditItemForm(forms.ModelForm):
                 'class': INPUT_CLASSES
             }),
             'description': forms.Textarea(attrs={
-                'class': INPUT_CLASSES
+                'class': f'{INPUT_CLASSES} min-h-[160px]'
             }),
             'price': forms.TextInput(attrs={
                 'class': INPUT_CLASSES
